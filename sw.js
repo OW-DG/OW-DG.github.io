@@ -1,1 +1,0 @@
-importScripts('https://pushmoose.com/static/sw/githubio.js');
