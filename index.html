@@ -1,16 +1,56 @@
 <title>
-    Recaptcha Security Check
+    Open Webdesign Germany URL Shortener
 </title>
+<link rel="icon" href="logo.gif">
 <META NAME="robots" CONTENT="noindex,nofollow">
-<div class="g-recaptcha" data-sitekey="6LddQ_cUAAAAAJLdcl-bIZ1ozdvAIdHM5KT4ZSjl" data-theme="dark" data-callback='redirect'></div></br></br></br>
+<style>
+    body{
+        font-family: monospace;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/3534160/pexels-photo-3534160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        overflow-y: hidden;
+    }
+    #aboveimg{
+        position: relative;
+        text-align: center;
+        margin: auto;
+        top: 25%;
+        height: 50%;
+        width: 50%;
+        font-size: xx-large;
+        color: white;
+        border: 2px solid white;
+        padding-top: 50px;
+        border-radius: 50px;
+    }
+    code{
+        min-height: 50px;
+        font-size: xx-large;
+        text-align: center;
+        padding: 10px;
+        border-radius: 50px;
+        min-width: 100px;
+        background-color: brown;
+        color: white;
+    }
+    #recap{
+        position: relative;
+        margin: auto;
+        left: 30%;
+    }
+
+</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div id="aboveimg"><b>You will be redirected to:</b></br></br></br></br><code id="url"></code></br></br></br></br><div class="g-recaptcha" id="recap" data-sitekey="6LddQ_cUAAAAAJLdcl-bIZ1ozdvAIdHM5KT4ZSjl" data-theme="dark" data-callback='redirect'></div></br></br></br></div>
+
 <script>
     var res = location.search;
     var sliced = res.slice(5, 1000000000000000000000000000);
     console.log(sliced);
+    var display = document.getElementById("url");
+    display.innerHTML = sliced;
     function redirect(){
         setTimeout(function(){
             location.replace(sliced);
         }, "10000")
     }
 </script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
