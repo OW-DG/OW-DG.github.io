@@ -3,8 +3,14 @@
 </title>
 <META NAME="robots" CONTENT="noindex,nofollow">
 <div class="g-recaptcha" data-sitekey="6LddQ_cUAAAAAJLdcl-bIZ1ozdvAIdHM5KT4ZSjl" data-theme="dark" data-callback='redirect'></div></br></br></br>
-<script>function redirect(){
-
-var link = "http://open-webdesign-germany.github.io/"
-window.location.href = link; };</script>
+<script>
+    var res = location.search;
+    var sliced = res.slice(5, 1000000000000000000000000000);
+    console.log(sliced);
+    function redirect(){
+        setTimeout(function(){
+            location.replace(sliced);
+        }, "10000")
+    }
+</script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
